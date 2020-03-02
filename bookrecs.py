@@ -1,3 +1,10 @@
+"""
+Noah Brown
+March 1st, 2020
+CS1410-602
+Programming Project 3
+"""
+
 from functools import reduce
 from operator import mul, itemgetter
 from heapq import nlargest
@@ -32,10 +39,6 @@ while True:
 
     ratings[name] = intScores
 
-#print(ratings)
-
-
-
 # Write a function dotprod(x,y) 
 def dotprod(x, y):
     total = 0
@@ -44,8 +47,6 @@ def dotprod(x, y):
         total += x[i] * y[i]
     
     return total
-#print(dotprod([5, 0, -3], [5, 1, 3])) #5 * 5 + 0 * 1 + -3 * 3 = 16
-
 
 # Compute affinity scores for each user.  Store it in a data structure at the module level. 
 affinityScores = {}
@@ -60,7 +61,6 @@ def computeAffinityScores():
                     affinityScores[name1][name2] = score
 
 computeAffinityScores()
-#print(affinityScores)
 
 # Write the friends function, which returns a sorted list of the names of the two readers with the highest 
 # affinity scores compared to the reader in question. Use the sorted function for all sorting in this program. 
@@ -148,7 +148,7 @@ class FriendDialog(EasyDialog):
         myString = ""
         for e in friends(self.itemlist[self.index],int(self.nfriends.get())):
             myString += e + "\n"
-        self.messageBox("Recommendations for " + str(self.itemlist[self.index]),myString,width=60, height = 15)
+        self.messageBox("Friends of " + str(self.itemlist[self.index]),myString,width=60, height = 15)
 
 #Dialog box for gathering input and displaying output in a message box.
 class RecommendDialog(EasyDialog):
